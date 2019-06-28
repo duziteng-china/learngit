@@ -1,4 +1,10 @@
-Git is a distributed version control system.
-Git is free software distributed under the GPL.
-Git has a mutable index called stage.
-Git tracks changes of files.
+pipeline {
+    agent { docker 'maven:3.3.3' }
+    stages {
+        stage('build') {
+            steps {
+                sh 'mvn --version'
+            }
+        }
+    }
+}
